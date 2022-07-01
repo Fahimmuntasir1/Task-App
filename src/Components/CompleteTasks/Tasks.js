@@ -5,7 +5,7 @@ const Tasks = () => {
   // const [Load, setLoad] = useState(true)
 
   useEffect(() => {
-    fetch("http://localhost:5000/tasks")
+    fetch("https://hydro-whistler-11519.herokuapp.com/tasks")
       .then((res) => res.json())
       .then((data) => {
         if (data) {

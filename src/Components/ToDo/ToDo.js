@@ -7,7 +7,7 @@ const ToDo = () => {
   const [id, setId] = useState(0);
 
   useEffect(() => {
-    fetch("http://localhost:5000/tasks")
+    fetch("https://hydro-whistler-11519.herokuapp.com/tasks")
       .then((res) => res.json())
       .then((data) => setTodoData(data));
   }, []);
@@ -22,7 +22,7 @@ const ToDo = () => {
     const updateTodo = e.target.text.value;
 
     if (id) {
-      fetch(`http://localhost:5000/upToDo/${id}`, {
+      fetch(`https://hydro-whistler-11519.herokuapp.com/upToDo/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -39,7 +39,7 @@ const ToDo = () => {
 
   /*  =================== Click in the Checkbox ====================  */
   const Checkbox = (CheckID) => {
-    fetch(`http://localhost:5000/Checkbox/${CheckID}`, {
+    fetch(`https://hydro-whistler-11519.herokuapp.com/Checkbox/${CheckID}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
