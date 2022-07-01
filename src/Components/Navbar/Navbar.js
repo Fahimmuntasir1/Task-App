@@ -3,10 +3,22 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <nav className="">
-      <Link to="/task">Complete Task</Link>
-      <Link to="/calendar">Calendar</Link>
-    </nav>
+    <div className="">
+      <nav className="flex justify-center">
+        <Link className="p-2 border bg-emerald-500 text-white my-2" to="/todo">
+          ToDo
+        </Link>
+        <Link className="p-2 border bg-emerald-500 text-white my-2" to="/task">
+          Complete Task
+        </Link>
+        <Link
+          className="p-2 border bg-emerald-500 text-white my-2"
+          to="/calendar"
+        >
+          Calendar
+        </Link>
+      </nav>
+    </div>
   );
 };
 
