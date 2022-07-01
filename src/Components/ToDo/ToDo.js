@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 
 const ToDo = () => {
   const [todoData, setTodoData] = useState([]);
-  const [id, setId] = useState(0)
+  const [id, setId] = useState(0);
 
   useEffect(() => {
     fetch("http://localhost:5000/tasks")
@@ -12,10 +12,10 @@ const ToDo = () => {
       .then((data) => setTodoData(data));
   }, []);
 
-      /*  ------------ Update Button Click In modal show ----------------------- */
-      const modal = (UpdateId) => {
-        setId(UpdateId)
-    }
+  /*  ------------ Update Button Click In modal show ----------------------- */
+  const modal = (UpdateId) => {
+    setId(UpdateId);
+  };
   /*------------------- Task Value is Update --------------- */
   const Update = (e) => {
     e.preventDefault();
@@ -37,6 +37,21 @@ const ToDo = () => {
     }
   };
 
+  /*  =================== Click in the Checkbox ====================  */
+  const Checkbox = (CheckID) => {
+    fetch(`http://localhost:5000/Checkbox/${CheckID}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        toast.success("Update Checkbox!");
+      });
+  };
+
   return (
     <div className=" bg-slate-200 overflow-auto text-center">
       <AddTask />
@@ -48,7 +63,7 @@ const ToDo = () => {
               <th>ID</th>
               <th>Todo List</th>
               <th>Update</th>
-              <th>checkbox</th>
+              <th>Status</th>
             </tr>
           </thead>
           <tbody>
@@ -66,11 +81,18 @@ const ToDo = () => {
                     </label>
                   </button>
                 </td>
-                <td>
-                  <button className="btn btn-outline rounded btn-accent">
-                    Complete
-                  </button>
-                </td>
+                <th>
+                  <label>
+                    <input
+                    className="checkbox checkbox-primary"
+                      onClick={() => Checkbox(dt._id)}
+                      type="checkbox"
+                      class="checkbox"
+                      checked={dt.Checkbox && "checked"}
+                      disabled={dt?.Checkbox && "disabled"}
+                    />
+                  </label>
+                </th>
               </tr>
             ))}
           </tbody>
