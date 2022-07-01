@@ -20,7 +20,7 @@ const Tasks = () => {
       <div>
         {
           /*  Load ? <Loader></Loader> :  */ <div class="overflow-x-auto">
-            <table class="table w-full">
+            <table class="table-normal w-full">
               <thead>
                 <tr>
                   <th>ID</th>

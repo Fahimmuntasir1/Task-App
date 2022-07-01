@@ -56,8 +56,8 @@ const ToDo = () => {
     <div className="overflow-auto text-center">
       <AddTask />
       <div>
-        <h2 className="text-2xl font-bold">To Do</h2>
-        <table className="w-10/12 m-auto table">
+        <h2 className="text-2xl font-bold">ToDos</h2>
+        <table className="w-10/12 m-auto table-compact">
           <thead>
             <tr>
               <th>ID</th>

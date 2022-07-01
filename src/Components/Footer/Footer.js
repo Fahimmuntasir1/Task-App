@@ -18,20 +18,12 @@ const Footer = () => {
         <a href="link link-hover">Press kit</a>
       </div>
       <div>
-        <span class="footer-title">Newsletter</span>
         <div class="form-control w-80">
-          <label class="label">
-            <span class="label-text  text-white">Enter your email address</span>
-          </label>
           <div class="relative">
-            <input
-              type="text"
-              placeholder="username@site.com"
-              class="input input-bordered w-full pr-16"
-            />
-            <button class="btn btn-primary absolute top-0 right-0 rounded-l-none">
-              Subscribe
-            </button>
+            <h2 className="text-2xl font-bold text-left">ToDo</h2>
+            <p className="text-left mt-2">
+              &copy;All right reserved ToDo Apps {new Date().getFullYear()}
+            </p>
           </div>
         </div>
       </div>
