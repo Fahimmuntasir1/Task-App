@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 const Tasks = () => {
   const [TodoData, setTodoData] = useState([]);
-  // const [Lod, setLod] = useState(true)
+  // const [Load, setLoad] = useState(true)
 
   useEffect(() => {
     fetch("http://localhost:5000/tasks")
@@ -10,7 +10,7 @@ const Tasks = () => {
       .then((data) => {
         if (data) {
           setTodoData(data);
-          // setLod(false)
+          // setLoad(false)
         }
       });
   });
@@ -19,8 +19,8 @@ const Tasks = () => {
       <h2>Complete tasks</h2>
       <div>
         {
-          /*  Lod ? <Spinner></Spinner> :  */ <div class="overflow-x-auto w-full px-4 md:px-32  lg:px-40">
-            <table class="table w-60 shadow-md my-10 mx-auto  rounded-2xl">
+          /*  Load ? <Loader></Loader> :  */ <div class="overflow-x-auto">
+            <table class="table w-full">
               <thead>
                 <tr>
                   <th>ID</th>

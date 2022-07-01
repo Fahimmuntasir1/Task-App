@@ -53,26 +53,26 @@ const ToDo = () => {
   };
 
   return (
-    <div className=" bg-slate-200 overflow-auto text-center">
+    <div className="overflow-auto text-center">
       <AddTask />
       <div>
-        <h2>To Do</h2>
-        <table className="text-center">
+        <h2 className="text-2xl font-bold">To Do</h2>
+        <table className="w-10/12 m-auto table">
           <thead>
             <tr>
               <th>ID</th>
-              <th>Todo List</th>
+              <th>Tasks</th>
               <th>Update</th>
               <th>Status</th>
             </tr>
           </thead>
           <tbody>
-            {todoData.map((dt, index) => (
-              <tr key={dt._id}>
+            {todoData.map((taskData, index) => (
+              <tr key={taskData._id}>
                 <td>{index + 1}</td>
-                <td className="w-[60%]">{dt.data}</td>
+                <td className="w-[60%]">{taskData.data}</td>
                 <td>
-                  <button onClick={() => modal(dt._id, dt.data)}>
+                  <button onClick={() => modal(taskData._id, taskData.data)}>
                     <label
                       for="my-modal-6"
                       className="btn btn-outline rounded btn-primary"
@@ -84,12 +84,12 @@ const ToDo = () => {
                 <th>
                   <label>
                     <input
-                    className="checkbox checkbox-primary"
-                      onClick={() => Checkbox(dt._id)}
+                      className="checkbox checkbox-primary"
+                      onClick={() => Checkbox(taskData._id)}
                       type="checkbox"
                       class="checkbox"
-                      checked={dt.Checkbox && "checked"}
-                      disabled={dt?.Checkbox && "disabled"}
+                      checked={taskData.Checkbox && "checked"}
+                      disabled={taskData?.Checkbox && "disabled"}
                     />
                   </label>
                 </th>
